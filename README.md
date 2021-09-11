@@ -1,5 +1,5 @@
 # Hangman
-**A simple text-based implementation of hangman**
+**A simple text-based implementation of the paper and pencil guessing game of hangman.**
 ## Rules:
 - Game is designed for 2 players.
 - One person enters a word/phrase (which can include spaces and special characters) as the word/phrase to be guessed.
