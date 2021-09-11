@@ -56,10 +56,7 @@ public:
 	  bool hasbeenguessed(char letter);
 	  bool manishanging()
 	  {
-		  if (hanganimation == 6)
-			  return true;
-		  else
-			  return false;
+		  return (hanganimation == 6);
 	  }
 	  void reset()
 	  {
