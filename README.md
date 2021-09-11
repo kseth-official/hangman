@@ -1,4 +1,4 @@
-# Hangman
+# Project Hangman
 **A simple text-based implementation of the paper and pencil guessing game of hangman.**
 ## Rules:
 - Game is designed for 2 players.
