@@ -10,4 +10,4 @@
     - choose to enter the entire word/phrase at once.
 - If 6 wrong guesses are made for which letters could exist, the person loses the game.
 
-![An image of the main gameplay screen](gameplay.png)
+<img src="gameplay.png" alt="An image of the main gameplay screen" width="351" height="470"/>
