@@ -23,48 +23,7 @@ If 6 wrong guesses are made for which letters could exist, the person loses the 
 
 */
 
-#include<iostream>
-#include<conio.h>
-#include<fstream>
-#include<process.h>
-#include<vector>
-#include<string>
-
-using namespace std;
-
-class hangman
-{
-	string player, phrase;
-	vector<char> characterstodisplay;
-	int hanganimation;
-public: 
-	hangman()
-	{
-		player = "one";
-		hanganimation = 0;
-	}
-	  void execute();
-	  void displayRules();
-	  void enterthephrase();
-	  void playgame();
-	  void displayanimation();
-	  void displayphraselayout();
-	  void guessletter();
-	  bool isletterinphrase(char letter);
-	  void guessword();
-	  void displayletters();
-	  bool hasbeenguessed(char letter);
-	  bool manishanging()
-	  {
-		  return (hanganimation == 6);
-	  }
-	  void reset()
-	  {
-		  hanganimation = 0;
-		  characterstodisplay.clear();
-	  }
-
-} game ;
+#include "Hangman.h"
 
 const char uparrow = 72;
 const char darrow = 75;
@@ -134,7 +93,7 @@ void finalscreen(bool win)
 	MAINMENU();
 }
 
-void hangman::displayRules()
+void Hangman::displayRules()
 {
 	system("cls");
 	cout << "Rules" << endl;
@@ -148,14 +107,14 @@ void hangman::displayRules()
 	_getch();
 }
 
-void hangman::enterthephrase()
+void Hangman::enterthephrase()
 {
 	system("cls");
 	cout << "Enter word/phrase to be guessed: ";
 	getline(cin>>ws, phrase); //requires string header file / allows string input to terminate at newline character \n
 }
 
-void hangman::displayanimation()
+void Hangman::displayanimation()
 {
 	char c;
 	ifstream obj;
@@ -239,7 +198,7 @@ void hangman::displayanimation()
 	cout << endl;
 }
 
-bool hangman::hasbeenguessed(char letter)
+bool Hangman::hasbeenguessed(char letter)
 {
 	bool flag = false;
 	for (int j = 0; j < characterstodisplay.size(); ++j)
@@ -253,7 +212,7 @@ bool hangman::hasbeenguessed(char letter)
 	return flag;
 }
 
-void hangman::displayletters()
+void Hangman::displayletters()
 {
 	int length = 0;
 	for (int i = 0; i < phrase.size(); ++i)
@@ -278,7 +237,7 @@ void hangman::displayletters()
 	cout << endl;
 }
 
-void hangman::displayphraselayout()
+void Hangman::displayphraselayout()
 {
 	for (int i = 0; i < phrase.size(); ++i)
 	{
@@ -290,7 +249,7 @@ void hangman::displayphraselayout()
 	cout << endl;
 }
 
-bool hangman::isletterinphrase(char letter)
+bool Hangman::isletterinphrase(char letter)
 {
 	int flag = false;
 	for (int i = 0; i < phrase.size(); ++i)
@@ -301,7 +260,7 @@ bool hangman::isletterinphrase(char letter)
 	return flag;
 }
 
-void hangman::guessletter()
+void Hangman::guessletter()
 {
 	char letter;
 	cout << "Enter the letter: ";
@@ -314,7 +273,7 @@ void hangman::guessletter()
 		characterstodisplay.push_back(letter);
 }
 
-void hangman::guessword()
+void Hangman::guessword()
 {
 	string word;
 	cout << "Enter word: ";
@@ -325,7 +284,7 @@ void hangman::guessword()
 		++hanganimation;
 }
 
-void hangman::playgame()
+void Hangman::playgame()
 {
 	while (1)
 	{
@@ -352,7 +311,7 @@ void hangman::playgame()
 
 }
 
-void hangman::execute()
+void Hangman::execute()
 {
 	displayRules();
 	enterthephrase();
