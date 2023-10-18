@@ -130,7 +130,6 @@ void Hangman::retrieveTextFrom(std::string filename) {
 	std::ifstream inputStream;
 
 	inputStream.open(filename, std::ios::in);
-	inputStream.seekg(0);	
 	inputStream.seekg(START_OF_FILE);	
 	while (inputStream)
 	{
