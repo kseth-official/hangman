@@ -5,6 +5,7 @@ const char darrow = 75;
 
 Hangman game;
 
+const int START_OF_FILE = 0;
 
 const std::string ANIMATION_INITIAL_FILE_NAME = "zero.txt";
 const std::string ANIMATION_ONE_FILE_NAME = "one.txt";
@@ -130,6 +131,7 @@ void Hangman::retrieveTextFrom(std::string filename) {
 
 	inputStream.open(filename, std::ios::in);
 	inputStream.seekg(0);	
+	inputStream.seekg(START_OF_FILE);	
 	while (inputStream)
 	{
 		inputStream.get(character);
