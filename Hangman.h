@@ -11,9 +11,11 @@ using namespace std;
 
 class Hangman
 {
+private:
 	string player, phrase;
 	vector<char> characterstodisplay;
 	int hanganimation;
+
 public:
 	Hangman()
 	{
