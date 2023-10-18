@@ -85,7 +85,8 @@ void Hangman::enterThePhrase()
 {
 	system("cls");
 	std::cout << "Enter word/phrase to be guessed: ";
-	getline(std::cin, phrase); //requires std::string header file / allows std::string input to terminate at newline character \n
+	getline(std::cin >> std::ws, phrase);
+	transform(phrase.begin(), phrase.end(), phrase.begin(), ::tolower); 
 }
 
 void Hangman::displayAnimation()
