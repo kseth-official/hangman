@@ -6,6 +6,9 @@
 #include<process.h>
 #include<vector>
 #include<string>
+
+using namespace std;
+
 class Hangman
 {
 	string player, phrase;
