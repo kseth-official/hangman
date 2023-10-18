@@ -17,11 +17,8 @@ private:
 
 	void retrievetextfrom(string filename);
 public:
-	Hangman()
-	{
-		player = "one";
-		hanganimation = 0;
-	}
+	Hangman() : hanganimation(0), player("one") {}
+
 	void execute();
 	void displayRules();
 	void enterthephrase();
