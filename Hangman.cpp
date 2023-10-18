@@ -18,13 +18,18 @@ void startMainMenu()
 	while (1)
 	{
 		system("cls");
-		cout << "Menu" << endl;
-		cout << "1. Play Game";
+		std::cout << "Menu" << std::endl << std::endl;
+		std::cout << "1. Play Game";
 		if (position == 2)
-			cout << "  <-";
-		cout << "\n2. Exit";
+			std::cout << "  <-";
+		std::cout << "\n2. Exit";
 		if (position == 1)
-			cout << "       <-";
+			std::cout << "       <-";
+
+ 		std::cout << std::endl;
+ 		std::cout << std::endl;
+		
+		std::cout << "Use W and S to navigate and enter to select";
 
 		option = _getch();
 
@@ -73,10 +78,10 @@ void Hangman::displayRules()
 	std::cout << "Rules" << std::endl;
 	std::cout << "1. Game is designed for 2 players" << std::endl;
 	std::cout << "2. One person enters a word / phrase. The other person attempts to guess it by either :" << std::endl;
-	std::cout << "a) typing in a letter which could exist in the phrase to reveal all the places where the letter is used, or by" << std::endl;
-	std::cout << "b) typing in the entire word." << std::endl;
-	std::cout << "3. If 6 wrong guesses are made, person 2 loses the game." << std::endl;
-	std::cout << "HAVE FUN!" << std::endl;;
+	std::cout << "  a) typing in a letter which could exist in the phrase to reveal all the places where the letter is used, or by" << std::endl;
+	std::cout << "  b) typing in the entire word/phrase in one go" << std::endl;
+	std::cout << "3. If 6 wrong guesses are made, person 2 loses the game." << std::endl << std::endl;
+	std::cout << "HAVE FUN!" << std::endl;
 	std::cout << "\nPress any key to proceed";
 	_getch();
 }
@@ -226,7 +231,7 @@ void Hangman::playGame()
 
 		char option;
 		std::cout << "\n1. Guess a letter" << std::endl;
-		std::cout << "2. Guess the word/phrase" << std::endl;
+		std::cout << "2. Guess the entire word/phrase" << std::endl;
 		std::cout << "Enter here : " << std::endl;;
 		std::cin >> option;
 		if (option == '1')
