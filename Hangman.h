@@ -40,5 +40,6 @@ public:
 		characterstodisplay.clear();
 	}
 
-} game;
+};
 
+extern Hangman game;
