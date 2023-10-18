@@ -7,10 +7,7 @@ Hangman game;
 
 int isInMenuBounds(int value)
 {
-	if (value == 3 || value == 0)
-		return false;
-	else
-		return true;
+	return !(value == 3 || value == 0);
 }
 
 void startMainMenu()
