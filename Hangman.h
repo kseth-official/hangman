@@ -1,11 +1,10 @@
 #pragma once
 
-#include<iostream>
-#include<conio.h>
-#include<fstream>
-#include<process.h>
-#include<vector>
-#include<string>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <conio.h> // Windows Specific
 
 using namespace std;
 

@@ -3,6 +3,8 @@
 const char uparrow = 72;
 const char darrow = 75;
 
+Hangman game;
+
 int checkposinmenu(int value)
 {
 	if (value == 3 || value == 0)
