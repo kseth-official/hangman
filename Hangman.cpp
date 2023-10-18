@@ -5,6 +5,15 @@ const char darrow = 75;
 
 Hangman game;
 
+
+const std::string ANIMATION_INITIAL_FILE_NAME = "zero.txt";
+const std::string ANIMATION_ONE_FILE_NAME = "one.txt";
+const std::string ANIMATION_TWO_FILE_NAME = "two.txt";
+const std::string ANIMATION_THREE_FILE_NAME = "three.txt";
+const std::string ANIMATION_FOUR_FILE_NAME = "four.txt";
+const std::string ANIMATION_FIVE_FILE_NAME = "five.txt";
+const std::string ANIMATION_FINAL_FILE_NAME = "six.txt";
+
 int isInMenuBounds(int value)
 {
 	return !(value == 3 || value == 0);
@@ -98,19 +107,19 @@ void Hangman::displayAnimation()
 {
 	switch(hangAnimation) {
 		case AnimationState::INITIAL: 
-			retrieveTextFrom("zero.txt"); break;
+			retrieveTextFrom(ANIMATION_INITIAL_FILE_NAME); break;
 		case AnimationState::ONE: 
-			retrieveTextFrom("one.txt"); break;
+			retrieveTextFrom(ANIMATION_ONE_FILE_NAME); break;
 		case AnimationState::TWO: 
-			retrieveTextFrom("two.txt"); break;
+			retrieveTextFrom(ANIMATION_TWO_FILE_NAME); break;
 		case AnimationState::THREE: 
-			retrieveTextFrom("three.txt"); break;
+			retrieveTextFrom(ANIMATION_THREE_FILE_NAME); break;
 		case AnimationState::FOUR: 
-			retrieveTextFrom("four.txt"); break;
+			retrieveTextFrom(ANIMATION_FOUR_FILE_NAME); break;
 		case AnimationState::FIVE: 
-			retrieveTextFrom("five.txt"); break;
+			retrieveTextFrom(ANIMATION_FIVE_FILE_NAME); break;
 		case AnimationState::FINAL: 
-			retrieveTextFrom("six.txt"); break;
+			retrieveTextFrom(ANIMATION_FINAL_FILE_NAME); break;
 	}
 	std::cout << std::endl;
 }
