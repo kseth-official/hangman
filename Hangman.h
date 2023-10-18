@@ -11,14 +11,14 @@ using namespace std;
 class Hangman
 {
 private:
-	int hanganimation;
+	int hangAnimation;
 	string player;
 	string phrase;
-	vector<char> characterstodisplay;
+	vector<char> charactersToDisplay;
 
 	void retrieveTextFrom(string filename);
 public:
-	Hangman() : hanganimation(0), player("one") {}
+	Hangman() : hangAnimation(0), player("one") {}
 
 	void execute();
 	void displayRules();
@@ -33,12 +33,12 @@ public:
 	bool hasBeenGuessed(char letter);
 	bool isManHanging()
 	{
-		return (hanganimation == 6);
+		return (hangAnimation == 6);
 	}
 	void reset()
 	{
-		hanganimation = 0;
-		characterstodisplay.clear();
+		hangAnimation = 0;
+		charactersToDisplay.clear();
 	}
 
 };

@@ -91,31 +91,31 @@ void Hangman::enterThePhrase()
 void Hangman::displayAnimation()
 {
 	
-	if (hanganimation == 0)
+	if (hangAnimation == 0)
 	{
 		retrieveTextFrom("zero.txt");
 	}
-	else if (hanganimation == 1)
+	else if (hangAnimation == 1)
 	{
 		retrieveTextFrom("one.txt");
 	}
-	else if (hanganimation == 2)
+	else if (hangAnimation == 2)
 	{
 		retrieveTextFrom("two.txt");
 	}
-	else if (hanganimation == 3)
+	else if (hangAnimation == 3)
 	{
 		retrieveTextFrom("three.txt");
 	}
-	else if (hanganimation == 4)
+	else if (hangAnimation == 4)
 	{
 		retrieveTextFrom("four.txt");
 	}
-	else if (hanganimation == 5)
+	else if (hangAnimation == 5)
 	{
 		retrieveTextFrom("five.txt");
 	}
-	else if (hanganimation == 6)
+	else if (hangAnimation == 6)
 	{
 		retrieveTextFrom("six.txt");
 	}
@@ -139,9 +139,9 @@ void Hangman::retrieveTextFrom(string filename) {
 bool Hangman::hasBeenGuessed(char letter)
 {
 	bool flag = false;
-	for (unsigned int j = 0; j < characterstodisplay.size(); ++j)
+	for (unsigned int j = 0; j < charactersToDisplay.size(); ++j)
 	{
-		if (letter == characterstodisplay[j])
+		if (letter == charactersToDisplay[j])
 		{
 			flag = true;
 			break;
@@ -206,9 +206,9 @@ void Hangman::guessLetter()
 
 	int flag = isLetterInPhrase(letter);
 	if (flag == false)
-		++hanganimation;
+		++hangAnimation;
 	else
-		characterstodisplay.push_back(letter);
+		charactersToDisplay.push_back(letter);
 }
 
 void Hangman::guessWord()
@@ -219,7 +219,7 @@ void Hangman::guessWord()
 	if (word == phrase)
 		finalScreen(true);
 	else
-		++hanganimation;
+		++hangAnimation;
 }
 
 void Hangman::playGame()
