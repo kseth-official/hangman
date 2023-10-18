@@ -176,7 +176,7 @@ void Hangman::displayanimation()
 bool Hangman::hasbeenguessed(char letter)
 {
 	bool flag = false;
-	for (int j = 0; j < characterstodisplay.size(); ++j)
+	for (unsigned int j = 0; j < characterstodisplay.size(); ++j)
 	{
 		if (letter == characterstodisplay[j])
 		{
@@ -189,8 +189,8 @@ bool Hangman::hasbeenguessed(char letter)
 
 void Hangman::displayletters()
 {
-	int length = 0;
-	for (int i = 0; i < phrase.size(); ++i)
+	unsigned int length = 0;
+	for (unsigned int i = 0; i < phrase.size(); ++i)
 	{
 		if (phrase[i] == ' ')
 		{
@@ -214,7 +214,7 @@ void Hangman::displayletters()
 
 void Hangman::displayphraselayout()
 {
-	for (int i = 0; i < phrase.size(); ++i)
+	for (unsigned int i = 0; i < phrase.size(); ++i)
 	{
 		if (phrase[i] != ' ')
 			cout << "_ ";
@@ -227,7 +227,7 @@ void Hangman::displayphraselayout()
 bool Hangman::isletterinphrase(char letter)
 {
 	int flag = false;
-	for (int i = 0; i < phrase.size(); ++i)
+	for (unsigned int i = 0; i < phrase.size(); ++i)
 	{
 		if (phrase[i] == letter)
 			flag = true;
