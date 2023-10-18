@@ -8,17 +8,15 @@
 
 #include "AnimationState.h"
 
-using namespace std;
-
 class Hangman
 {
 private:
 	int hangAnimation;
-	string player;
-	string phrase;
-	vector<char> charactersToDisplay;
+	std::string player;
+	std::string phrase;
+	std::vector<char> charactersToDisplay;
 
-	void retrieveTextFrom(string filename);
+	void retrieveTextFrom(std::string filename);
 public:
 	Hangman() : hangAnimation(AnimationState::INITIAL), player("one") {}
 

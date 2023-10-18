@@ -57,12 +57,12 @@ void finalScreen(bool hasWon)
 {
 	system("cls");
 	if (hasWon) {
-		cout << "You win!" << endl;
+		std::cout << "You win!" << std::endl;
 	}
 	else {
-		cout << "You lose!" << endl;
+		std::cout << "You lose!" << std::endl;
 	}
-	cout << "Press any key to return to the main menu";
+	std::cout << "Press any key to return to the main menu";
 	_getch();
 	startMainMenu();
 }
@@ -70,22 +70,22 @@ void finalScreen(bool hasWon)
 void Hangman::displayRules()
 {
 	system("cls");
-	cout << "Rules" << endl;
-	cout << "1. Game is designed for 2 players" << endl;
-	cout << "2. One person enters a word / phrase. The other person attempts to guess it by either :" << endl;
-	cout << "a) typing in a letter which could exist in the phrase to reveal all the places where the letter is used, or by" << endl;
-	cout << "b) typing in the entire word." << endl;
-	cout << "3. If 6 wrong guesses are made, person 2 loses the game." << endl;
-	cout << "HAVE FUN!" << endl;;
-	cout << "\nPress any key to proceed";
+	std::cout << "Rules" << std::endl;
+	std::cout << "1. Game is designed for 2 players" << std::endl;
+	std::cout << "2. One person enters a word / phrase. The other person attempts to guess it by either :" << std::endl;
+	std::cout << "a) typing in a letter which could exist in the phrase to reveal all the places where the letter is used, or by" << std::endl;
+	std::cout << "b) typing in the entire word." << std::endl;
+	std::cout << "3. If 6 wrong guesses are made, person 2 loses the game." << std::endl;
+	std::cout << "HAVE FUN!" << std::endl;;
+	std::cout << "\nPress any key to proceed";
 	_getch();
 }
 
 void Hangman::enterThePhrase()
 {
 	system("cls");
-	cout << "Enter word/phrase to be guessed: ";
-	getline(cin>>ws, phrase); //requires string header file / allows string input to terminate at newline character \n
+	std::cout << "Enter word/phrase to be guessed: ";
+	getline(std::cin, phrase); //requires std::string header file / allows std::string input to terminate at newline character \n
 }
 
 void Hangman::displayAnimation()
@@ -106,19 +106,19 @@ void Hangman::displayAnimation()
 		case AnimationState::FINAL: 
 			retrieveTextFrom("six.txt"); break;
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 
-void Hangman::retrieveTextFrom(string filename) {
+void Hangman::retrieveTextFrom(std::string filename) {
 	char character;
-	ifstream inputStream;
+	std::ifstream inputStream;
 
-	inputStream.open(filename, ios::in);
+	inputStream.open(filename, std::ios::in);
 	inputStream.seekg(0);	
 	while (inputStream)
 	{
 		inputStream.get(character);
-		cout << character;
+		std::cout << character;
 	}
 	inputStream.close();
 }
@@ -144,22 +144,22 @@ void Hangman::displayLetters()
 	{
 		if (phrase[i] == ' ')
 		{
-			cout << "  ";
+			std::cout << "  ";
 			++length;
 			continue;
 		}
 		bool flag = hasBeenGuessed(phrase[i]);
 		if (flag)
 		{
-			cout << phrase[i] << " ";
+			std::cout << phrase[i] << " ";
 			++length;
 		}
 		else
-			cout << "  ";
+			std::cout << "  ";
 	}
 	if (length == phrase.size())
 		finalScreen(true);
-	cout << endl;
+	std::cout << std::endl;
 }
 
 void Hangman::displayPhraseLayout()
@@ -167,11 +167,11 @@ void Hangman::displayPhraseLayout()
 	for (unsigned int i = 0; i < phrase.size(); ++i)
 	{
 		if (phrase[i] != ' ')
-			cout << "_ ";
+			std::cout << "_ ";
 		else
-			cout << "  ";
+			std::cout << "  ";
 	}
-	cout << endl;
+	std::cout << std::endl;
 }
 
 bool Hangman::isLetterInPhrase(char letter)
@@ -188,8 +188,8 @@ bool Hangman::isLetterInPhrase(char letter)
 void Hangman::guessLetter()
 {
 	char letter;
-	cout << "Enter the letter: ";
-	cin >> letter;
+	std::cout << "Enter the letter: ";
+	std::cin >> letter;
 
 	int flag = isLetterInPhrase(letter);
 	if (flag == false)
@@ -200,9 +200,9 @@ void Hangman::guessLetter()
 
 void Hangman::guessWord()
 {
-	string word;
-	cout << "Enter word: ";
-	getline(cin >> ws, word);
+	std::string word;
+	std::cout << "Enter word: ";
+	getline(std::cin, word);
 	if (word == phrase)
 		finalScreen(true);
 	else
@@ -214,7 +214,7 @@ void Hangman::playGame()
 	while (1)
 	{
 		system("cls");
-		cout << "HANGMAN\n" << endl;
+		std::cout << "HANGMAN\n" << std::endl;
 		displayAnimation();
 
 		if (isManHanging())
@@ -224,10 +224,10 @@ void Hangman::playGame()
 		displayPhraseLayout();
 
 		char option;
-		cout << "\n1. Guess a letter" << endl;
-		cout << "2. Guess the word/phrase" << endl;
-		cout << "Enter here : " << endl;;
-		cin >> option;
+		std::cout << "\n1. Guess a letter" << std::endl;
+		std::cout << "2. Guess the word/phrase" << std::endl;
+		std::cout << "Enter here : " << std::endl;;
+		std::cin >> option;
 		if (option == '1')
 			guessLetter();	
 		else if(option=='2')
