@@ -1,0 +1,10 @@
+/bin/
+/x64/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.sln.docstates
