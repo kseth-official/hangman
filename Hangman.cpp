@@ -90,34 +90,21 @@ void Hangman::enterThePhrase()
 
 void Hangman::displayAnimation()
 {
-	
-	if (hangAnimation == 0)
-	{
-		retrieveTextFrom("zero.txt");
-	}
-	else if (hangAnimation == 1)
-	{
-		retrieveTextFrom("one.txt");
-	}
-	else if (hangAnimation == 2)
-	{
-		retrieveTextFrom("two.txt");
-	}
-	else if (hangAnimation == 3)
-	{
-		retrieveTextFrom("three.txt");
-	}
-	else if (hangAnimation == 4)
-	{
-		retrieveTextFrom("four.txt");
-	}
-	else if (hangAnimation == 5)
-	{
-		retrieveTextFrom("five.txt");
-	}
-	else if (hangAnimation == 6)
-	{
-		retrieveTextFrom("six.txt");
+	switch(hangAnimation) {
+		case AnimationState::INITIAL: 
+			retrieveTextFrom("zero.txt"); break;
+		case AnimationState::ONE: 
+			retrieveTextFrom("one.txt"); break;
+		case AnimationState::TWO: 
+			retrieveTextFrom("two.txt"); break;
+		case AnimationState::THREE: 
+			retrieveTextFrom("three.txt"); break;
+		case AnimationState::FOUR: 
+			retrieveTextFrom("four.txt"); break;
+		case AnimationState::FIVE: 
+			retrieveTextFrom("five.txt"); break;
+		case AnimationState::FINAL: 
+			retrieveTextFrom("six.txt"); break;
 	}
 	cout << endl;
 }

@@ -6,6 +6,8 @@
 #include <string>
 #include <conio.h> // Windows Specific
 
+#include "AnimationState.h"
+
 using namespace std;
 
 class Hangman
@@ -18,7 +20,7 @@ private:
 
 	void retrieveTextFrom(string filename);
 public:
-	Hangman() : hangAnimation(0), player("one") {}
+	Hangman() : hangAnimation(AnimationState::INITIAL), player("one") {}
 
 	void execute();
 	void displayRules();
@@ -33,14 +35,13 @@ public:
 	bool hasBeenGuessed(char letter);
 	bool isManHanging()
 	{
-		return (hangAnimation == 6);
+		return (hangAnimation == AnimationState::FINAL);
 	}
 	void reset()
 	{
-		hangAnimation = 0;
+		hangAnimation = AnimationState::INITIAL;
 		charactersToDisplay.clear();
 	}
-
 };
 
 extern Hangman game;
