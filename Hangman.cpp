@@ -7,6 +7,10 @@ Hangman game;
 
 const int START_OF_FILE = 0;
 
+const char UP = 'w';
+const char DOWN = 's';
+const char ENTER = '\r';
+
 const std::string ANIMATION_INITIAL_FILE_NAME = "zero.txt";
 const std::string ANIMATION_ONE_FILE_NAME = "one.txt";
 const std::string ANIMATION_TWO_FILE_NAME = "two.txt";
@@ -44,21 +48,21 @@ void startMainMenu()
 		option = _getch();
 
 		int flag = 0;
-		if (option == 'w')
+		if (option == UP)
 		{
 			++position;
 			flag = isInMenuBounds(position);
 			if (flag == false)
 				--position;
 		}
-		else if (option == 's')
+		else if (option == DOWN)
 		{
 			--position;
 			flag = isInMenuBounds(position);
 			if (flag == false)
 				++position;
 		}
-		else if (option == '\r')
+		else if (option == ENTER)
 		{
 			if (position == 2)
 				game.execute();
