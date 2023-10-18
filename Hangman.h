@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <conio.h> // Windows Specific
+#include<bits/stdc++.h> 
 
 #include "AnimationState.h"
 

@@ -202,7 +202,7 @@ void Hangman::guessWord()
 {
 	std::string word;
 	std::cout << "Enter word: ";
-	getline(std::cin, word);
+	getline(std::cin >> std::ws, word);
 	if (word == phrase)
 		finalScreen(true);
 	else

@@ -9,3 +9,4 @@
 *.opensdf
 *.sln.docstates
 *.exe
+/.vscode/
