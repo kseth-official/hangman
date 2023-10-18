@@ -1,4 +1,11 @@
 #pragma once
+
+#include<iostream>
+#include<conio.h>
+#include<fstream>
+#include<process.h>
+#include<vector>
+#include<string>
 class Hangman
 {
 	string player, phrase;
