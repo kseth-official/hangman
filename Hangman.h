@@ -16,6 +16,7 @@ private:
 	vector<char> characterstodisplay;
 	int hanganimation;
 
+	void retrievetextfrom(string filename);
 public:
 	Hangman()
 	{
