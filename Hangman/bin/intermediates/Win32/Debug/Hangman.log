@@ -1,6 +1,0 @@
-﻿  Hangman.cpp
-D:\250gbdata\Visual Studio\Data\Hangman\Hangman.cpp(206,20): warning C4018: '<': signed/unsigned mismatch
-D:\250gbdata\Visual Studio\Data\Hangman\Hangman.cpp(219,20): warning C4018: '<': signed/unsigned mismatch
-D:\250gbdata\Visual Studio\Data\Hangman\Hangman.cpp(237,20): warning C4018: '<': signed/unsigned mismatch
-D:\250gbdata\Visual Studio\Data\Hangman\Hangman.cpp(250,20): warning C4018: '<': signed/unsigned mismatch
-  Hangman.vcxproj -> D:\250gbdata\Visual Studio\Data\Hangman\bin\Win32\Debug\Hangman.exe
