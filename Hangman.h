@@ -16,22 +16,22 @@ private:
 	string phrase;
 	vector<char> characterstodisplay;
 
-	void retrievetextfrom(string filename);
+	void retrieveTextFrom(string filename);
 public:
 	Hangman() : hanganimation(0), player("one") {}
 
 	void execute();
 	void displayRules();
-	void enterthephrase();
-	void playgame();
-	void displayanimation();
-	void displayphraselayout();
-	void guessletter();
-	bool isletterinphrase(char letter);
-	void guessword();
-	void displayletters();
-	bool hasbeenguessed(char letter);
-	bool manishanging()
+	void enterThePhrase();
+	void playGame();
+	void displayAnimation();
+	void displayPhraseLayout();
+	void guessLetter();
+	bool isLetterInPhrase(char letter);
+	void guessWord();
+	void displayLetters();
+	bool hasBeenGuessed(char letter);
+	bool isManHanging()
 	{
 		return (hanganimation == 6);
 	}
