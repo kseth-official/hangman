@@ -91,86 +91,50 @@ void Hangman::enterthephrase()
 
 void Hangman::displayanimation()
 {
-	char c;
-	ifstream obj;
+	
 	if (hanganimation == 0)
 	{
-		obj.open("zero.txt", ios::in);
-		obj.seekg(0);	
-		while (obj)
-		{
-			obj.get(c);
-			cout << c;
-		}
-		obj.close();
+		retrievetextfrom("zero.txt");
 	}
 	else if (hanganimation == 1)
 	{
-		obj.open("one.txt",ios::in);
-		obj.seekg(0);
-		while (obj)
-		{
-			obj.get(c);
-			cout << c;
-		}
-		obj.close();
+		retrievetextfrom("one.txt");
 	}
 	else if (hanganimation == 2)
 	{
-		obj.open("two.txt",ios::in);
-		obj.seekg(0);
-		while (obj)
-		{
-			obj.get(c);
-			cout << c;
-		}
-		obj.close();
+		retrievetextfrom("two.txt");
 	}
 	else if (hanganimation == 3)
 	{
-		obj.open("three.txt",ios::in);
-		obj.seekg(0);
-		while (obj)
-		{
-			obj.get(c);
-			cout << c;
-		}
-		obj.close();
+		retrievetextfrom("three.txt");
 	}
 	else if (hanganimation == 4)
 	{
-		obj.open("four.txt",ios::in);
-		obj.seekg(0);
-		while (obj)
-		{
-			obj.get(c);
-			cout << c;
-		}
-		obj.close();
+		retrievetextfrom("four.txt");
 	}
 	else if (hanganimation == 5)
 	{
-		obj.open("five.txt",ios::in);
-		obj.seekg(0);
-		while (obj)
-		{
-			obj.get(c);
-			cout << c;
-		}
-		obj.close();
+		retrievetextfrom("five.txt");
 	}
 	else if (hanganimation == 6)
 	{
-		obj.open("six.txt",ios::in);
-		obj.seekg(0);
-		while (obj)
-		{
-			obj.get(c);
-			cout << c;
-		}
-		obj.close();
+		retrievetextfrom("six.txt");
 	}
 	cout << endl;
+}
+
+void Hangman::retrievetextfrom(string filename) {
+	char c;
+	ifstream obj;
+
+	obj.open(filename, ios::in);
+	obj.seekg(0);	
+	while (obj)
+	{
+		obj.get(c);
+		cout << c;
+	}
+	obj.close();
 }
 
 bool Hangman::hasbeenguessed(char letter)
